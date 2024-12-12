@@ -59,9 +59,7 @@ class cmake_build(build):
                 "third_party/build.py qhull",
                 "third_party/build.py cork",
                 #"third_party/build.py carve",
-                "third_party/build.py draco",
                 "third_party/build.py tbb",
-                "third_party/build.py mmg",
                 "third_party/build.py json",
                 ];
         for c in commands:
