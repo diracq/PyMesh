@@ -12,7 +12,11 @@ RUN apt-get update && apt-get install -y \
     libgmpxx4ldbl \
     libboost-dev \
     libboost-thread-dev \
-    zip unzip patchelf && \
+    tar \
+    zstd \
+    zip \
+    unzip \
+    patchelf && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
     git clone --single-branch -b main https://github.com/diracq/PyMesh.git
@@ -25,5 +29,5 @@ RUN git submodule update --init
 RUN bash -c "source ~/.bashrc && conda activate common_env && python setup.py build"
 
 # Create a tarball of the PyMesh directory with build products
-RUN tar -czvf /root/PyMesh.tar.gz -C /root PyMesh
-CMD ["cat", "/root/PyMesh.tar.gz"]
+RUN tar --use-compress-program=zstd -cf /root/PyMesh.tar.zst -C /root PyMesh
+CMD ["cat", "/root/PyMesh.tar.zst"]
