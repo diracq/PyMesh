@@ -1,3 +1,16 @@
+### This is the Dirac fork of PyMesh. ##
+
+## Changes:
+
+- Remove MMG and draco dependencies (unneccecary and broken installs)
+- Created [Dockerfile](Dockerfile) for building PyMesh in the Dirac Python base image and creating a tarball of the build products
+
+> **Warning**
+> 
+> This repository is not actively maintained/updated. The original PyMesh has also not been updated in years, so it is unlikely the build products will change.
+> We anticipate moving away from using PyMesh in the future in favor of directly using the C++ libraries this wraps, so this repository is not likely to be updated.
+
+
 [![CircleCI](https://circleci.com/gh/PyMesh/PyMesh/tree/main.svg?style=svg)](https://circleci.com/gh/PyMesh/PyMesh/tree/main)
 [![Build Status](https://travis-ci.org/PyMesh/PyMesh.svg?branch=main)](https://travis-ci.org/PyMesh/PyMesh)
 [![Documentation Status](https://readthedocs.org/projects/pymesh/badge/?version=latest)](https://pymesh.readthedocs.io/en/latest/?badge=latest)
